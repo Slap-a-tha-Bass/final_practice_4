@@ -11,12 +11,9 @@ const EditDetails = () => {
     const { values, handleChanges, populate } = useForm();
     const [categories, setCategories] = useState<Categories[]>([]);
     useEffect(() => {
-        apiService('/api/books')
+        apiService(`/api/books/${id}`)
             .then(values => {
-                populate(values.title),
-                populate(values.author),
-                populate(values.price),
-                populate(values.id)
+                populate(values);
             })
     }, [])
     useEffect(() => {
