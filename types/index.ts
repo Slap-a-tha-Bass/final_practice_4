@@ -18,9 +18,13 @@ export interface Users {
     id?: number,
     name?: string,
     email?: string,
-    password?: number,
+    password?: string,
     _created?: Date
 }
 export interface ReqUsers extends Request {
     user?: Users
+}
+export interface Categories {
+    id?: number,
+    name?: string
 }
