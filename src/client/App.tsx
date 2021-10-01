@@ -1,11 +1,19 @@
 import * as React from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './views/Home';
 
 const App = (props: AppProps) => {
 	
 	return (
-		<main className="container my-5">
-			<h1 className="text-primary text-center"></h1>
-		</main>
+		<BrowserRouter>
+			<Navbar />
+			<Switch>
+				<Route exact path ="/">
+					<Home />
+				</Route>
+			</Switch>
+		</BrowserRouter>
 	);
 };
 
