@@ -52,7 +52,7 @@ const EditDetails = () => {
                 type="number" 
                 step=".01"
                 className="form-control" />
-                <select name="categoryid" onChange={handleChanges}>
+                <select name="categoryid" onChange={handleChanges} value={values.categoryid}>
                     <option value="0">Choose Genre</option>
                     {categories.map((values) => (
                         <option value={values.id} key={values.id}>
