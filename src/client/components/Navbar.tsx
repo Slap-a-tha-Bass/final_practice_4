@@ -5,10 +5,12 @@ import RootLayout from './RootLayout';
 const Navbar = () => {
     return (
         <RootLayout>
-            <Link to="/">home</Link>
-            <Link to="/books">books</Link>
-            <Link to="/login">login</Link>
-            <Link to="/register">register</Link>
+            <div className="d-flex justify-content-center">
+                <Link className="btn btn-primary mx-3" to="/">home</Link>
+                <Link className="btn btn-primary mx-3" to="/books">books</Link>
+                <Link className="btn btn-primary mx-3" to="/login">login</Link>
+                <Link className="btn btn-primary mx-3" to="/register">register</Link>
+            </div>
         </RootLayout>
     )
 }
