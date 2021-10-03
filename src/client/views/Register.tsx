@@ -10,6 +10,10 @@ const Register = () => {
 
     const handleRegister = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        if(!values.email || !values.password){
+            alert('Oops, fill out required fields!');
+            return;
+        }
         apiService('/auth/register', 'POST', { name: values.name, email: values.email, password: values.password, role: 'guest' })
             .then(token => {
                 localStorage.setItem('token', token),

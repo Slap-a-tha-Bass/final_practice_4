@@ -15,6 +15,10 @@ const Home = () => {
     }, []);
     const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
+        if(!values.title || !values.author || !values.price || !values.categoryid){
+            alert('Please fill out all required fields');
+            return;
+        }
         apiService('/api/books', 'POST', { title: values.title, author: values.author, price: values.price, categoryid: values.categoryid})
             .then(data => {
                 history.push('/books');
